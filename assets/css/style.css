@@ -599,7 +599,7 @@ body.nav-active {
     circle,
     rgba(255, 248, 242, 1) 1%,
     rgba(253, 243, 241, 1) 50%,
-    rgba(255, 217, 217, 1) 86%
+    rgb(255, 223, 223) 86%
   );
 }
 .btn:is(:hover, :focus-visible)::before {
@@ -1036,13 +1036,13 @@ body.nav-active {
 }
 
 .navbar-list {
-  border-block-end: 1px solid var(--white-alpha-20);
+  border-block-end: 1px solid #a8a8a8;
   margin-block-end: 100px;
   color: rgb(66, 66, 66);
 }
 
 .navbar-item {
-  border-block-start: 1px solid var(--white-alpha-20);
+  border-block-start: 1px solid #a8a8a8;
 }
 
 .navbar-link {
@@ -1187,6 +1187,14 @@ body.nav-active {
   pointer-events: none;
   user-select: none;
   z-index: -1;
+}
+@media (width < 500px) {
+  .hero .slider-bgmb1 {
+    left: -30%;
+  }
+  .hero .slider-bgmb3 {
+    left: -30%;
+  }
 }
 
 .hero .slider-item.active .slider-bg {
@@ -2155,7 +2163,7 @@ textarea.input-field {
    */
 
   :is(.service, .about) .section-text {
-    max-width: 420px;
+    max-width: 500px;
     margin-inline: auto;
   }
 
@@ -2440,31 +2448,44 @@ textarea.input-field {
   .about .container {
     display: grid;
     gap: 120px;
-    margin-top: 10vh;
+    margin-top: 6vh;
+  }
+  .special-rene-banner {
+    display: none;
   }
 
   .bg-rose-01 {
-    background: linear-gradient(
-      to bottom,
-      #f8d7da 90%,
-      var(--gold-crayola) 100%
-    ); /* Un rosa pastel claro */
+    background: transparent;
   }
 
   .special-rene .section-text {
-    text-align: left;
+    text-align: center;
+    font-size: var(--fontSize-body-4);
   }
+
+  .special-rene-content {
+    padding: 50px 10px;
+  }
+
   .special-rene-content ul {
-    margin-left: 1rem;
+    padding: 0 5%;
   }
   .special-rene-content li {
     line-height: 2;
   }
   .section-text2 {
-    flex-direction: column; /* Asegura que los elementos estén en columna */
-    align-items: center; /* Centra horizontalmente los elementos */
+    text-align: center;
+    margin-top: 10px;
+    padding: 0 5%;
   }
-  .section-text2 li {
+
+  .section-textlist {
+    display: flex; /* Activa flexbox */
+    flex-direction: column; /* Coloca los elementos en columna */
+    align-items: center; /* Alinea los elementos al inicio del eje horizontal */
+    justify-content: center; /* Asegura que los elementos comiencen desde el inicio del eje vertical */
+    text-align: center; /* Asegura que el texto esté alineado a la izquierda */
+    gap: 1rem;
   }
   .special-rene .wrapper {
     margin-top: 4rem;
@@ -2546,6 +2567,7 @@ textarea.input-field {
     padding-top: 10rem;
   }
   .special-rene {
+    position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
     text-align: left;
@@ -2909,11 +2931,7 @@ textarea.input-field {
     display: none !important;
   }
   .bg-gold-10 {
-    background: linear-gradient(
-      to bottom,
-      var(--gold-crayola) 0%,
-      rgb(255, 246, 246) 90%
-    );
+    background: #ffe2de;
   }
   .service-card .hover\:shine {
     display: flex;

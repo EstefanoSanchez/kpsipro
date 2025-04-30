@@ -30,15 +30,38 @@ const addEventOnElements = function (elements, eventType, callback) {
 const navbar = document.querySelector("[data-navbar]");
 const navTogglers = document.querySelectorAll("[data-nav-toggler]");
 const overlay = document.querySelector("[data-overlay]");
+const navLinks = document.querySelectorAll(".navbar-link");
 
+// Función para alternar el menú móvil
 const toggleNavbar = function () {
   navbar.classList.toggle("active");
   overlay.classList.toggle("active");
   document.body.classList.toggle("nav-active");
 };
 
-addEventOnElements(navTogglers, "click", toggleNavbar);
+// Agregar evento a los togglers (botón de abrir/cerrar menú)
+navTogglers.forEach((toggler) => {
+  toggler.addEventListener("click", toggleNavbar);
+});
 
+// Función para cerrar el menú móvil y manejar la clase "active"
+const closeNavbarOnLinkClick = function (event) {
+  // Eliminar la clase "active" de todos los enlaces
+  navLinks.forEach((link) => link.classList.remove("active"));
+
+  // Agregar la clase "active" al enlace que se hizo clic
+  event.target.classList.add("active");
+
+  // Cerrar el menú móvil
+  navbar.classList.remove("active");
+  overlay.classList.remove("active");
+  document.body.classList.remove("nav-active");
+};
+
+// Agregar evento a cada enlace del navbar
+navLinks.forEach((link) => {
+  link.addEventListener("click", closeNavbarOnLinkClick);
+});
 /**
  * HEADER & BACK TOP BTN
  */
