@@ -191,28 +191,34 @@ window.addEventListener("mousemove", function (event) {
     parallaxItems[i].style.transform = `translate3d(${x}px, ${y}px, 0px)`;
   }
 });
-// Get the modal
-var modal = document.getElementById("myModal");
+// Get the modals
+var modals = document.querySelectorAll(".modal");
 
-// Get the button that opens the modal
-var btn = document.getElementById("myBtn");
+// Get the buttons
+var btns = document.querySelectorAll(".openModalBtn");
 
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
+// Get the <span> elements that close the modal
+var spans = document.querySelectorAll(".close");
 
-// When the user clicks on the button, open the modal
-btn.onclick = function () {
-  modal.style.display = "block";
-};
+// Open modal when a button is clicked
+btns.forEach((btn, index) => {
+  btn.onclick = function () {
+    modals[index].style.display = "block";
+  };
+});
 
-// When the user clicks on <span> (x), close the modal
-span.onclick = function () {
-  modal.style.display = "none";
-};
+// Close modal when <span> (x) is clicked
+spans.forEach((span, index) => {
+  span.onclick = function () {
+    modals[index].style.display = "none";
+  };
+});
 
-// When the user clicks anywhere outside of the modal, close it
+// Close modal when clicking outside
 window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+  modals.forEach((modal) => {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  });
 };
