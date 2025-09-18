@@ -474,6 +474,10 @@ body.nav-active {
   transition: all 0.5s ease-in-out;
 }
 
+.special-rene .btn {
+  border: 1px solid #d4d4d4;
+}
+
 .btn::before {
   content: "";
   position: absolute;
@@ -932,6 +936,7 @@ body.nav-active {
 .button-active {
   background-color: white;
   color: var(--black-alpha-80);
+  border: 1px solid var(--black-alpha-15);
 }
 
 .header.hide {
@@ -3070,13 +3075,13 @@ textarea.input-field {
   background-color: #ffffff;
   border-radius: 40px;
   padding: 1rem;
-  border: 1px solid var(--rosa);
+  border: 1px solid var(--gold-crayola);
   transition: all 0.4s ease-in-out;
 }
 
 .modal-buttons:hover {
-  background-color: var(--gold-crayola);
-  color: white;
+  color: rgb(22, 22, 22);
+  box-shadow: inset 0 0 4px rgb(172, 167, 100);
 }
 
 /* The Close Button */
