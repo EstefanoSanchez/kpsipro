@@ -619,10 +619,12 @@ body.nav-active {
   color: white;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
   display: hidden;
+    border: 1px solid rgb(107, 107, 107);
 }
 
 .btn-secondary::before {
-  background-color: var(--gold-crayola);
+  background-color: #b05768;
+
 }
 
 .btn-secondary .text-2 {
@@ -922,7 +924,7 @@ body.nav-active {
 
 .header.active {
   z-index: 10;
-  padding-block: 20px;
+  padding-block: clamp(10px, 1vh, 20px);
   background: linear-gradient(
     90deg,
     #ffffff 1%,
@@ -934,9 +936,13 @@ body.nav-active {
 }
 
 .button-active {
-  background-color: white;
-  color: var(--black-alpha-80);
-  border: 1px solid var(--black-alpha-15);
+  background-color: #ffabab;
+  padding: 1rem 2rem;
+  color: #444;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  text-shadow: none;
 }
 
 .header.hide {
@@ -1189,12 +1195,18 @@ body.nav-active {
   z-index: -1;
 }
 @media (width < 500px) {
+
   .hero .slider-bgmb1 {
     left: -30%;
   }
   .hero .slider-bgmb3 {
     left: -30%;
   }
+}
+.section {
+    position: relative;
+    overflow: hidden;
+    padding-block: 28px;
 }
 
 .hero .slider-item.active .slider-bg {
@@ -1374,7 +1386,7 @@ body.nav-active {
 .about .section-text {
   text-align: justify;
   text-justify: inter-word;
-  font-size: var(--fontSize-body-3);
+    font-size: clamp(1.5rem, 1vw, 3rem);
   hyphens: auto; /* Permite dividir palabras automáticamente */
   word-wrap: break-word; /* Ajusta las palabras largas */
   padding: 0 0;
@@ -1412,16 +1424,19 @@ body.nav-active {
 }
 
 .about-banner {
+  
   position: relative;
   margin-block-end: 120px;
 }
 
 .about-banner > .w-100 {
   padding-inline-start: 50px;
+  
 }
 
 .about .abs-img {
   position: absolute;
+  
 }
 
 .about .abs-img::before {
@@ -1429,15 +1444,16 @@ body.nav-active {
 }
 
 .about .abs-img-0 {
-  width: 70%;
+  width: clamp(150px, 200rem, 300px);
   height: auto;
   border: solid rgb(175, 175, 175) 1px;
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.226);
+  margin-top: 10rem;
 }
 
 .about .abs-img-1 {
   bottom: -80px;
-  right: -10px;
+  right: 0;
   width: 45%;
   padding-block: 50px;
 }
@@ -1954,6 +1970,8 @@ textarea.input-field {
   position: relative;
   overflow: hidden;
   cursor: pointer;
+  border: 2px solid #b05768;
+  border-radius: 3px;
 }
 
 .event-card .card-content {
@@ -2519,6 +2537,9 @@ textarea.input-field {
   .special-rene .wrapper {
     margin-top: 4rem;
   }
+    .about .abs-img-0 {
+    margin-top: 0;
+}
 }
 @media (min-width: 992px) {
   /**
@@ -2773,17 +2794,21 @@ textarea.input-field {
   }
 
   .navbar-link {
-    font-weight: var(--weight-bold);
-    letter-spacing: var(--letterSpacing-1);
+    font-weight: 500;
+
+    font-size: clamp(1.5rem, 1.1vw, 1.8rem);
+    text-transform: none; 
   }
 
   .navbar-link::after {
     display: block;
+    
   }
 
   .navbar-link.active::after {
     transform: scaleX(1);
     opacity: 1;
+    
   }
 
   .header .btn {
